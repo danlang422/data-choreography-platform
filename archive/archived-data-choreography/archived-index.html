@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Notes</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="app-container">
+        <!-- Left Panel: Notes List -->
+        <div class="notes-panel">
+            <div class="panel-header">
+                <h1>Simple Notes</h1>
+                <button id="newNoteBtn" class="new-note-btn" onclick="showEditor()">New</button>
+            </div>
+            <div id="noteDisplay"></div>
+        </div>
+        
+        <!-- Right Panel: Editor (hidden by default) -->
+        <div class="editor-panel" id="editorPanel" style="display: none;">
+            <div class="editor-header">
+                <div class="toolbar">
+                    <button onclick="formatText('bold')">B</button>
+                    <button onclick="formatText('italic')">I</button>
+                </div>
+                <button id="closeEditorBtn" class="close-btn" onclick="hideEditor()">X</button>
+            </div>
+            <!-- This div is set to contenteditable=true which enables rich-text editing.-->
+            <div id="noteInput" contenteditable="true" class="note-editor" placeholder="Write your note here..."></div>
+            <div class="editor-footer">
+                <button onclick="saveNote()" class="save-btn">Save Note</button>
+                <button onclick="clearNotes()" class="clear-btn">Clear All Notes</button>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,298 @@
+/* ===================================
+   Data Choreography Platform Styles
+   ===================================*/
+
+/* Reset and base styles */
+* {
+    /* Reset margin and padding for all elements */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Base font and background - tries Apple font then falls back to other options*/
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+button {
+    /* Button styles - makes buttons look clickable, removes default borders, inherits font */
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+}
+
+input, textarea {
+    /* Input and textarea styles - consistent styling for form fields with rounded corners */
+    font-family: inherit;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 8px 12px;
+}
+
+input:focus, textarea:focus {
+    /* Focus styles for inputs and textareas - on select, blue outline and shadow for accessibility */
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+/* Layout containers */
+.app-container {
+    /* Main app container - centers content and provides padding */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.content-area {
+    /* Content area - flexbox layout for main content and sidebar 
+    when you set display: flex on a container, its direct children become flex items*/
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.notes-container {
+    /* Notes container - flexbox layout for notes display */
+    flex: 1;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Header styles */
+.app-header {
+    /* Header - flexbox layout for header with title on left and capture button on right */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.app-header h1 {
+    /* Header title - large, bold, dark blue font for main title */
+    color: #2c3e50;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.capture-button {
+    /* Capture button - blue background, white text, rounded corners, hover effect */
+    background: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-weight: 500;
+    /* Transition effect for hover smooths out visual - very subtle, but noticeable*/
+    transition: background-color 0.2s ease;
+}
+
+.capture-button:hover {
+    background: #0056b3;
+}
+
+
+/* Modal styles */
+.modal {
+    /* Modal overlay - covers the entire screen with a semi-transparent background */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    /* Modal content box - white background, rounded corners, shadow for depth, appears on top of modal background */
+    background: white;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.close-button {
+    background: none;
+    font-size: 1.5rem;
+    color: #666;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+}
+
+.close-button:hover {
+    color: #333;
+}
+
+
+/* Form styles */
+#note-form {
+    padding: 20px;
+}
+
+.form-group {
+    /* consistent spacing for form groups */
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #555;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    resize: vertical;
+}
+
+.form-group textarea {
+    min-height: 100px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.save-button {
+    background: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+.save-button:hover {
+    background: #218838;
+}
+
+.cancel-button {
+    background: #6c757d;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+.cancel-button:hover {
+    background: #545b62;
+}
+
+
+/* Notes display */
+.notes-list {
+    margin-top: 15px;
+}
+
+.note-item {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 10px;
+    transition: border-color 0.2s ease;
+}
+
+.note-item:hover {
+    border-color: #007bff;
+}
+
+.note-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 8px;
+}
+
+.note-content {
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.note-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.note-type {
+    background: #e3f2fd;
+    color: #1976d2;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+/* Link styles for parsed references */
+.reference-link {
+    background: #e3f2fd;
+    color: #1976d2;
+    padding: 2px 6px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.reference-link:hover {
+    background: #bbdefb;
+}
+
+.wiki-link {
+    background: #f3e5f5;
+    color: #7b1fa2;
+    padding: 2px 6px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.wiki-link:hover {
+    background: #e1bee7;
+}
+
+/* Utility classes */
+.hidden {
+    display: none !important;
+}
+
+.empty-state {
+    text-align: center;
+    color: #888;
+    padding: 40px 20px;
+    font-style: italic;
+}
