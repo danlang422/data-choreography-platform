@@ -1,6 +1,6 @@
 # Learning Progress Tracker
 
-**Last Updated**: August 8, 2025
+**Last Updated**: August 11, 2025
 
 ## Mastered Concepts ✅
 
@@ -18,24 +18,32 @@
 - **Visual polish techniques**: Box shadows, border-radius, color schemes, typography
 
 ### JavaScript Fundamentals (Confidence: 4/5)
-- **DOM manipulation**: getElementById, addEventListener, classList methods
-- **Event handling patterns**: Form submission, click events, preventDefault usage
-- **Function organization**: Clear function naming, single responsibility principle
-- **Modern JavaScript practices**: const/let usage, arrow functions understanding
+- **DOM manipulation**: getElementById, querySelector/querySelectorAll, classList methods
+- **Event handling patterns**: Form submission, click events, preventDefault usage, event bubbling control
+- **Function organization**: Clear function naming, single responsibility principle, helper function extraction
+- **Modern JavaScript practices**: const/let usage, arrow functions understanding, variable scope management
 
-### Data Persistence & Management (Confidence: 3/5)
-- **localStorage operations**: JSON serialization/deserialization, basic data persistence
+### Data Persistence & Management (Confidence: 4/5)
+- **localStorage operations**: JSON serialization/deserialization, data persistence, update workflows
 - **Data structure design**: Element-based architecture matching specification requirements
-- **Form data processing**: Value extraction, validation, object creation patterns
+- **Form data processing**: Value extraction, validation, object creation and update patterns
+- **Object property updates**: Modifying existing objects, timestamp management, in-memory data changes
 - **Storage architecture decisions**: Flat vs nested storage trade-offs, migration paths from localStorage to IndexedDB
 
 ### Development Workflow (Confidence: 4/5)
 - **Manual coding approach**: Understanding that typing code builds better comprehension than copying
-- **Debugging techniques**: Using browser dev tools, console logging, comment-out testing
+- **Debugging techniques**: Using browser dev tools, console logging, comment-out testing, bracket matching
+- **Systematic problem solving**: Breaking down complex issues, identifying root causes
+- **Code organization**: DRY principle, helper function extraction, avoiding duplication
 - **Version control awareness**: Understanding of code changes and iterative development
 - **Live development setup**: VS Code Live Preview extension for side-by-side code/display workflow
 
 ## Currently Learning 📚
+
+### Advanced Event Handling (Confidence: 3/5)
+- **Event bubbling and propagation**: Understanding stopPropagation, nested event listeners
+- **Complex interaction patterns**: Multiple handlers on nested elements, preventing conflicts
+- **Form interaction management**: Preventing unwanted triggers while maintaining usability
 
 ### Advanced JavaScript Patterns (Confidence: 2/5)
 - **Module organization**: How to structure larger JavaScript applications
@@ -57,9 +65,9 @@
 ## Upcoming Learning Goals 🎯
 
 ### Immediate (Next 2 sessions)
-- **Link parsing implementation**: Parse `@[title](id)` and `[[title]]` patterns from text content
-- **Basic navigation**: Click link → show referenced element
-- **Grid view development**: Alternative display format using CSS Grid
+- **Functional linking**: Make parsed `@references` and `[[links]]` navigate between notes
+- **Additional element types**: Implement titleless 'snippet' type with auto-generated titles
+- **UI refinements**: Improve edit mode styling, better visual feedback
 
 ### Short-term (Next 2-4 weeks)
 - **Relationship visualization**: Show connections between elements visually
@@ -90,6 +98,12 @@ Studying other tools (Tana, Obsidian, Notion) revealed that **real-time text par
 
 ### Container Architecture Breakthrough
 **Separating content from display logic** via container base types creates clean separation where books/notes handle their data while containers handle layout/positioning - prevents properties object from becoming unwieldy.
+
+### Event Handling Mastery
+**Event bubbling understanding** is crucial for complex UIs. Learning when to use `stopPropagation()` and how to structure nested event listeners prevents unexpected behaviors and creates intuitive interactions.
+
+### Helper Function Pattern
+**Extracting reusable logic** into helper functions (like `addLinkHandlers()`) reduces duplication and makes code more maintainable. This pattern scales well as applications grow in complexity.
 
 ## Learning Style Preferences
 

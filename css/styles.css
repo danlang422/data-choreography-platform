@@ -59,6 +59,7 @@ input:focus, textarea:focus {
 
 .notes-container {
     /* Notes container - flexbox layout for notes display */
+    /* flex: 1 is a flex-grow factor that allows this container to take up available space */
     flex: 1;
     background: white;
     border-radius: 8px;
